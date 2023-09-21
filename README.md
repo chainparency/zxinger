@@ -20,4 +20,3 @@ document.querySelector("#scanButton").addEventListener("click", () => document.q
 <zxinger-scanner id="zxinger"></zxinger-scanner>
 <button id="scanButton"></button>
 ```
-
