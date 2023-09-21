@@ -4,6 +4,10 @@ An ESM ready QR code scanner along with a nice web component you can drop in any
 
 We will keep trying to modernize this library to ESM standards and we do accept pull requests, so please contribute if you can.
 
+## Demo
+
+[View demo](https://chainparency.github.io/zxinger/)
+
 ## Quickstart
 
 The easiest way is to use the web component.
@@ -20,3 +24,5 @@ document.querySelector("#scanButton").addEventListener("click", () => document.q
 <zxinger-scanner id="zxinger"></zxinger-scanner>
 <button id="scanButton"></button>
 ```
+
+View code for the demo at [/components/index.html].

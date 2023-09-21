@@ -3,6 +3,7 @@
 <head>
 
     <title>ZXinger Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <script type="importmap">
         {
@@ -33,13 +34,13 @@
             document.querySelector("#result").innerHTML = e.detail.value
         })
         document.querySelector("#scanButton").addEventListener("click", () => document.querySelector("#zxinger").open())
-
     </script>
 
     <xzinger-dialog id="zxinger"></xzinger-dialog>
 
     <div style="display: flex; flex-direction: column; gap: 20px; justify-content: center; align-items: center;">
         <h1>ZXinger Demo</h1>
+        <div><a href="https://github.com/chainparency/zxinger">https://github.com/chainparency/zxinger</a></div>
         <div>
             <span id="result"></span>
         </div>
