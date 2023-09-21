@@ -25,4 +25,4 @@ document.querySelector("#scanButton").addEventListener("click", () => document.q
 <button id="scanButton"></button>
 ```
 
-View code for the demo at [/components/index.html].
+View code for the demo [here](/components/index.html).
