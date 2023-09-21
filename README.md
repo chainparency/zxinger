@@ -9,7 +9,7 @@ The easiest way is to use the web component.
 ```html
 # TODO
 <script type="module">
-import X from Y
+import 'https://cdn.jsdelivr.net/gh/chainparency/zxinger@0/components/zxinger-scanner.js'
 
 document.querySelector("zxinger").addEventListener("change", (e) => console.log("result:", e.detail.value))
 </script>
