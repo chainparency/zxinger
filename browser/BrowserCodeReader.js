@@ -798,7 +798,7 @@ var BrowserCodeReader = /** @class */ (function () {
         var _this = this;
         if (retryIfNotFound === void 0) { retryIfNotFound = true; }
         if (retryIfChecksumOrFormatError === void 0) { retryIfChecksumOrFormatError = true; }
-        console.log("decodeOnce", element, "retryIfNotFound?", retryIfNotFound, "retryIfChecksumOrFormatError?", retryIfChecksumOrFormatError);
+        // console.log("decodeOnce", element, "retryIfNotFound?", retryIfNotFound, "retryIfChecksumOrFormatError?", retryIfChecksumOrFormatError);
         this._stopAsyncDecode = false;
         var loop = function (resolve, reject) {
             if (_this._stopAsyncDecode) {

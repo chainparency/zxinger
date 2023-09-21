@@ -1,7 +1,7 @@
-import { html, css, LitElement } from 'https://cdn.jsdelivr.net/npm/lit@2/+esm'
-import { BrowserMultiFormatReader, BrowserQRCodeReader } from 'https://cdn.jsdelivr.net/gh/chainparency/zxinger@0/index.js'
+import { html, css, LitElement } from 'lit'
+import { BrowserMultiFormatReader } from 'https://cdn.jsdelivr.net/gh/chainparency/zxinger@0/index.js'
 
-export class ZxingerScanner extends LitElement {
+export class ZXingerScanner extends LitElement {
 
     static properties = {
         selectedDeviceId: { type: String },
@@ -10,27 +10,12 @@ export class ZxingerScanner extends LitElement {
         error: { type: Object },
     }
 
-    static styles = [
-        css` 
-          .column {
-            display: flex;
-            flex-direction: column;
-          }
-
-          .row {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-          }
-          
-        `
-    ]
+    static styles = css``
 
     constructor() {
         super()
-        this.selectedDeviceId = ""
-        this.result = ""
+        this.selectedDeviceId = ''
+        this.result = ''
 
         this.codeReader = new BrowserMultiFormatReader()
 
@@ -42,83 +27,24 @@ export class ZxingerScanner extends LitElement {
     }
 
     render() {
-        console.log("render")
-        return html`    
-    <md-dialog id="dialog" @close=${this.dialogClose} @cancel=${this.dialogCancel}>
-    <span slot="headline">Scan a code</span>
-    <div slot="content">
-        <div class="column">
-            <div class="row">    
+        return html`
             <video id="video" width="300" height="200" style="border: 1px solid gray"></video>           
-            </div>
-            <div class="row"> 
-            <pre>
-              <code id="result">
-                ${this.result}
-              </code>
-            </pre>               
-            </div>
-        </div>
-    </div>
-    <div slot="actions">
-    <md-outlined-button type="button" @click=${this.close}>Cancel</md-outlined-button>
-    <!-- <md-outlined-button type="button" @click=${this._choose}>Ok</md-outlined-button> -->
-    </div>
-</md-dialog>         
-    `;
-    }
-
-    dialogClose() {
-        console.log('dialogClose')
-        this.reset()
-    }
-
-    dialogCancel() {
-        // console.log('dialogCancel')
-        // this.reset()
-    }
-
-    firstUpdated() {
-        super.firstUpdated()
-    }
-
-    _choose() {
-        this.dispatchEvent(new CustomEvent("change", { detail: { result: this.result } }))
-        this.close()
+    `
     }
 
     close() {
-        // this.reset()
-        const dialog = this.renderRoot.querySelector('#dialog')
-        dialog.close()
+        this.reset()
     }
 
-    async start() {
-
-        let controls = this.decodeOnce(this.codeReader, this.selectedDeviceId)
-
-    }
-
-    async decodeOnce(codeReader, selectedDeviceId) {
-        let video = this.renderRoot.getElementById('video')
-        // console.log('video', video)
-        // console.log('this.selectedDeviceId', selectedDeviceId)
-        try {
-            let result = await codeReader.decodeFromInputVideoDevice(selectedDeviceId, video)
-            console.log("RESULT:", result)
-            this.result = result.text
-            // auto close:
-            this.dispatchEvent(new CustomEvent("change", { detail: { value: this.result } }))
-            this.close()
-        } catch (err) {
-            console.error(err)
-            this.error = err
-        }
-    }
 
     reset() {
         this.codeReader.reset()
         this.result = ''
+    }
+
+    async start() {
+        let controls = this.decodeOnce(this.codeReader, this.selectedDeviceId)
+
     }
 
     async open() {
@@ -139,6 +65,24 @@ export class ZxingerScanner extends LitElement {
         }
     }
 
+    async decodeOnce(codeReader, selectedDeviceId) {
+        let video = this.renderRoot.getElementById('video')
+        // console.log('video', video)
+        // console.log('this.selectedDeviceId', selectedDeviceId)
+        try {
+            let result = await codeReader.decodeFromInputVideoDevice(selectedDeviceId, video)
+            console.log("RESULT:", result)
+            this.result = result.text
+            // auto close:
+            this.dispatchEvent(new CustomEvent("change", { detail: { value: this.result } }))
+            this.close()
+        } catch (err) {
+            console.error(err)
+            this.error = err
+        }
+    }
+
+
 }
 
-customElements.define("xzinger-scanner", ZxingerScanner)
+customElements.define("xzinger-scanner", ZXingerScanner)

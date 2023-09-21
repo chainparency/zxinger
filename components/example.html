@@ -1,8 +1,52 @@
 <html>
 
+<head>
+
+    <title>ZXinger Demo</title>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "lit": "https://cdn.jsdelivr.net/npm/lit@2/index.js",
+            "lit/": "https://cdn.jsdelivr.net/npm/lit@2/",
+            "@material/web/": "https://cdn.jsdelivr.net/npm/@material/web@1.0.0-pre.17/",
+            "@lit/reactive-element": "https://cdn.jsdelivr.net/npm/@lit/reactive-element@1/reactive-element.js",
+            "@lit/reactive-element/": "https://cdn.jsdelivr.net/npm/@lit/reactive-element@1/",
+            "lit-element/lit-element.js": "https://cdn.jsdelivr.net/npm/lit-element@3/lit-element.js",
+            "lit-html": "https://cdn.jsdelivr.net/npm/lit-html@2/lit-html.js",
+            "lit-html/": "https://cdn.jsdelivr.net/npm/lit-html@2/",
+            "tslib": "https://cdn.jsdelivr.net/npm/tslib@2/tslib.es6.mjs"
+          }
+        }
+        </script>
+
+</head>
+
 <body>
 
-    <qr-code-scanner id="scanner" @change=${this.scanComplete}></qr-code-scanner>
+    <script type="module">
+        import './zxinger-dialog.js'
+        import '@material/web/button/filled-button.js'
+
+        document.querySelector("#zxinger").addEventListener("change", (e) => {
+            console.log("result:", e.detail.value)
+            document.querySelector("#result").innerHTML = e.detail.value
+        })
+        document.querySelector("#scanButton").addEventListener("click", () => document.querySelector("#zxinger").open())
+
+    </script>
+
+    <xzinger-dialog id="zxinger"></xzinger-dialog>
+
+    <div style="display: flex; flex-direction: column; gap: 20px; justify-content: center; align-items: center;">
+        <h1>ZXinger Demo</h1>
+        <div>
+            <span id="result"></span>
+        </div>
+        <div>
+            <md-filled-button id="scanButton">Scan</md-filled-button>
+        </div>
+    </div>
 
 </body>
 
