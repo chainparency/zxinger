@@ -1,5 +1,5 @@
 import { html, css, LitElement } from 'lit'
-import { BrowserMultiFormatReader } from 'https://cdn.jsdelivr.net/gh/chainparency/zxinger@0/index.js'
+import { BrowserMultiFormatReader } from 'zxinger'
 
 export class ZXingerScanner extends LitElement {
 
