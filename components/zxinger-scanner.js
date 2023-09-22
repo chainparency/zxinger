@@ -85,4 +85,4 @@ export class ZXingerScanner extends LitElement {
 
 }
 
-customElements.define("xzinger-scanner", ZXingerScanner)
+customElements.define("zxinger-scanner", ZXingerScanner)
