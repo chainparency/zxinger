@@ -58,7 +58,7 @@ export class ZXingerDialog extends LitElement {
             <div slot="content">
                 <div class="column">
                     <div class="row">    
-                    <xzinger-scanner id="zxinger" @change=${this.changed}></zxinger-scanner>
+                    <zxinger-scanner id="zxinger" @change=${this.changed}></zxinger-scanner>
                     </div>
                     <div class="row"> 
                     <pre>
