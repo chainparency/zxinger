@@ -15,7 +15,7 @@ The easiest way is to use the web component.
 ```html
 # TODO
 <script type="module">
-import 'https://cdn.jsdelivr.net/gh/chainparency/zxinger@0/components/zxinger-scanner.js'
+import 'zinger/components/zxinger-scanner.js'
 
 document.querySelector("zxinger").addEventListener("change", (e) => console.log("result:", e.detail.value))
 document.querySelector("#scanButton").addEventListener("click", () => document.querySelector("#zxinger").open())
