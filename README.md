@@ -26,3 +26,17 @@ document.querySelector("#scanButton").addEventListener("click", () => document.q
 ```
 
 View code for the demo [here](/components/index.html).
+
+### To use from CDN
+
+Just add this inside your `<head></head>` tags then the rest is the same:
+
+```html
+<script type="importmap">
+  {
+    "imports": {
+      "zxinger": "https://cdn.jsdelivr.net/gh/chainparency/zxinger@0/index.js"
+    }
+  }
+</script>
+```
