@@ -24,7 +24,7 @@ Just add this inside your `<head></head>` tags then the rest is the same:
 <script type="importmap">
   {
     "imports": {
-      "zxinger": "https://cdn.jsdelivr.net/gh/chainparency/zxinger@0/index.js"
+      "zxinger": "https://cdn.jsdelivr.net/gh/chainparency/zxinger@0/"
     }
   }
 </script>
