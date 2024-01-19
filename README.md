@@ -10,6 +10,28 @@ We will keep trying to modernize this library to ESM standards and we do accept 
 
 ## Quickstart
 
+### Install with npm
+
+```sh
+npm install chainparency/zxinger
+```
+
+### To use from CDN
+
+Just add this inside your `<head></head>` tags then the rest is the same:
+
+```html
+<script type="importmap">
+  {
+    "imports": {
+      "zxinger": "https://cdn.jsdelivr.net/gh/chainparency/zxinger@0/index.js"
+    }
+  }
+</script>
+```
+
+### Usage
+
 The easiest way is to use the web component.
 
 ```html
@@ -26,17 +48,3 @@ document.querySelector("#scanButton").addEventListener("click", () => document.q
 ```
 
 View code for the demo [here](/components/index.html).
-
-### To use from CDN
-
-Just add this inside your `<head></head>` tags then the rest is the same:
-
-```html
-<script type="importmap">
-  {
-    "imports": {
-      "zxinger": "https://cdn.jsdelivr.net/gh/chainparency/zxinger@0/index.js"
-    }
-  }
-</script>
-```
