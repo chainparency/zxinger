@@ -1,6 +1,6 @@
 {
   "name": "zxinger",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "description": "An ESM ready QR code scanner along with a nice web component you can drop in anywhere.",
   "main": "index.js",
