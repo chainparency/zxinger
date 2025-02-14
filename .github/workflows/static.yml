@@ -24,10 +24,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
-          # Upload entire repository
-          path: './components/'
+          name: github-pages
+          path: components/
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
