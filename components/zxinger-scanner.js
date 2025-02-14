@@ -1,11 +1,13 @@
 import { html, css, LitElement } from 'lit'
-import { BrowserMultiFormatReader } from 'zxinger'
+// import { BrowserMultiFormatReader } from 'zxinger/browser/BrowserMultiFormatReader.js'
+// import { BrowserQRCodeReader } from 'zxinger/browser/BrowserQRCodeReader.js'
 
 export class ZXingerScanner extends LitElement {
 
     static properties = {
         selectedDeviceId: { type: String },
         result: { type: String },
+        readerName: { type: String },
         codeReader: { type: Object },
         error: { type: Object },
     }
@@ -17,13 +19,23 @@ export class ZXingerScanner extends LitElement {
         this.selectedDeviceId = ''
         this.result = ''
 
-        this.codeReader = new BrowserMultiFormatReader()
-
+        this.readerName = 'BrowserMultiFormatReader'
+        this.codeReader = null
         this.error = null
     }
 
     connectedCallback() {
         super.connectedCallback()
+        if (!this.codeReader) {
+            this.loadReader()
+        }
+    }
+
+    async loadReader() {
+        let mod = await import(`zxinger/browser/${this.readerName}.js`)
+        console.log("MOD:", mod)
+        console.log(mod[this.readerName])
+        this.codeReader = Reflect.construct(mod[this.readerName], []) //  mod[this.readerName]()
     }
 
     render() {
