@@ -32,7 +32,7 @@ Just add this inside your `<head></head>` tags then the rest is the same:
 
 ### Usage
 
-The easiest way is to use the web component.
+The easiest way is to use the `zxinger-scanner` web component.
 
 ```html
 # TODO
@@ -48,3 +48,17 @@ document.querySelector("#scanButton").addEventListener("click", () => document.q
 ```
 
 View code for the demo [here](/components/index.html).
+
+If you'd like to do without the component, just copy what's in the [component](components/zxinger-scanner.js) into your own code.
+
+### Choosing specific code formats (to optimize performance / load times)
+
+You can choose the type of code you are scanning to prevent loading unecessary code.
+
+Choose the code type by the filename [in this directory])(/browser).
+
+Then use the name with the `readerName` attribute, eg if you are only using QR codes:
+
+```html
+<zxinger-scanner id="zxinger" readerName="BrowserQRCodeReader"></zxinger-scanner>
+``` 

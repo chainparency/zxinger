@@ -1,0 +1,88 @@
+/* Base styles for the application */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0.5em 0;
+  font-weight: normal;
+}
+
+p {
+  margin: 0 0 1em;
+  line-height: 1.6;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul,
+ol {
+  margin: 0 0 1em 1.5em;
+  padding: 0;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+input,
+textarea {
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.header,
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1em 0;
+  text-align: center;
+}
+
+.header a,
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header a:hover,
+.footer a:hover {
+  text-decoration: underline;
+}
